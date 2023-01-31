@@ -27,14 +27,14 @@ export default function Auth() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <NavLink to="/auth/sign-in">
         Sign In
         </NavLink>
         <NavLink to="/auth/sign-up">
         Sign Up
         </NavLink>
-      </div>
+      </div> */}
       <div>
         <form onSubmit={submitAuth}>
           <label>Email</label>

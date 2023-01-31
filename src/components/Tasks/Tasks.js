@@ -8,22 +8,13 @@ import TaskList from './TaskList';
 
 export default function Tasks() {
   const { user } = useUser();
-  console.log(user);
-  (!user) && <Redirect to="/auth/sign-in" />;
 
-  // const handleLogout = async () => {
-  //   try {
-  //     console.log('hello');
-  //     await signOut();
-  //     setUser(null);
-  //   } catch (e) {
-  //     console.error(e.message);
-  //   }
-  // };
+  if (!user) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>
-      {/* <Header handleLogout={handleLogout}/> */}
       <TaskForm />
       <TaskList />
     </div>
