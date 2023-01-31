@@ -9,7 +9,9 @@ export default function Auth() {
   const { type } = useParams();
   const { user, setUser } = useUser();
 
-  (user) && <Redirect to="/tasks" />;
+  if (user) {
+    return <Redirect to="/tasks" />;
+  }
   
   const submitAuth = async (e) => {
     e.preventDefault();
