@@ -2,17 +2,8 @@ import React from 'react';
 import { signOut } from '../../services/auth';
 import { useUser } from '../../context/UserContext';
 
-export default function Header() {
-  const { setUser } = useUser();
-
-  const handleLogout = async () => {
-    try {
-      await signOut();
-      setUser(null);
-    } catch (e) {
-      console.error(e.message);
-    }
-  };
+export default function Header({ handleLogout }) {
+  // const { user } = useUser();
 
   return (
     <div>
