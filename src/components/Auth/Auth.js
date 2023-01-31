@@ -1,8 +1,7 @@
 import React from 'react';
-import { useContext } from 'react';
 import { useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import { UserContext } from '../../context/UserContext';
+import { useUser } from '../../context/UserContext';
 import { authUser } from '../../services/auth';
 
 export default function Auth() {
@@ -10,15 +9,15 @@ export default function Auth() {
   const [password, setPassword] = useState('');
   const { type } = useParams();
 
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useUser();
   
   const submitAuth = async (e) => {
     e.preventDefault();
-    console.log('email', email, password);
+    // console.log('email', email, password);
     try {
       const newUser = await authUser(email, password, type);
       setUser(newUser);
-      console.log('user', user);
+      // console.log('user', user);
     } catch (e) {
       console.error(e);
     }
