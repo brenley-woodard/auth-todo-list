@@ -14,10 +14,10 @@ export async function authUser(email, password, type) {
   if (response.error) {
     throw response.error;
   }
-  console.log('response', response);
+  // console.log('response', response);
   return response.user;
 }
 
-// export async function signOut() {
-//   await client.auth.signOut();
-// }
+export async function signOut() {
+  await client.auth.signOut();
+}
