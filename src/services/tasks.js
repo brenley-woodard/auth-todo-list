@@ -6,8 +6,8 @@ export async function getTasks() {
   return checkError(response);
 }
 
-export async function createTasks(todo) {
-  const response = await client.from('todos').insert([{ todo }]).single(); // because of RLS and our default values, we add user_id for free
+export async function createTasks(user, todo) {
+  const response = await client.from('todos').insert({ user_id: user.id, todo }).single(); // because of RLS and our default values, we add user_id for free
 
   return checkError(response);
 }

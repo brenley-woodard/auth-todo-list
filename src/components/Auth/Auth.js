@@ -27,14 +27,6 @@ export default function Auth() {
 
   return (
     <>
-      {/* <div>
-        <NavLink to="/auth/sign-in">
-        Sign In
-        </NavLink>
-        <NavLink to="/auth/sign-up">
-        Sign Up
-        </NavLink>
-      </div> */}
       <div>
         <form onSubmit={submitAuth}>
           <label>Email</label>
